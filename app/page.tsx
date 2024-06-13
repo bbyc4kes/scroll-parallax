@@ -29,7 +29,7 @@ export default function Home() {
   })
   const { height } = dimension
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.8])
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
@@ -59,7 +59,7 @@ export default function Home() {
       <div className="h-[100vh]"></div>
       <div
         ref={gallery}
-        className="h-[175vh] bg-slate-900 relative flex overflow-hidden gap-[2vw] p-[2vw]"
+        className="h-[175vh] bg-slate-900 relative overflow-hidden gap-[2vw] p-[2vw] flex"
       >
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
@@ -80,7 +80,7 @@ const Column = ({
 }) => {
   return (
     <motion.div
-      className="relative h-full w-1/4 min-w-[250px] flex flex-col gap-[2vw] odd:top-[-45%] even:top-[-80%]"
+      className="relative h-full w-full min-w-[250px] flex flex-col gap-[2vw] odd:top-[-45%] even:top-[-75%] last-of-type:top-[-95%]"
       style={{ y }}
     >
       {images.map((src, i) => {
